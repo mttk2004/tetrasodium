@@ -31,6 +31,7 @@ export const authService = {
     try {
       return JSON.parse(userStr) as User;
     } catch (error) {
+      console.error('Error parsing user from localStorage', error);
       return null;
     }
   },
