@@ -4,7 +4,8 @@ import App from '@/App';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { LoginPage } from '@/pages/LoginPage';
 import { Route as rootRoute } from './__root';
-
+import { ProductsPage } from '@/pages/ProductsPage';
+import { EmployeesPage } from '@/pages/EmployeesPage';
 // Định nghĩa các trang con
 const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
@@ -35,13 +36,13 @@ const dashboardRoute = createRoute({
 const productsRoute = createRoute({
   getParentRoute: () => dashboardLayoutRoute,
   path: '/products',
-  component: () => <div>Danh sách sản phẩm</div>,
+  component: () => <ProductsPage />,
 });
 
 const employeesRoute = createRoute({
   getParentRoute: () => dashboardLayoutRoute,
   path: '/employees',
-  component: () => <div>Danh sách nhân viên</div>,
+  component: () => <EmployeesPage />,
 });
 
 const attendanceRoute = createRoute({
